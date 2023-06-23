@@ -1,0 +1,11 @@
+// Общие стили попапов
+@import "./_popups";
+
+// Попап сообщение
+@import "./popup-message";
+
+// Попап форма
+@import "./popup-forms";
+
+// Кнопка анимационая для вызова popup-message
+@import "./btn-view-message";

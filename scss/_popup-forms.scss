@@ -1,0 +1,213 @@
+/* ------------------- Form Letter -------------------- */
+.popups-forms {
+  width: 100%;
+  max-width: 440px;
+  position: absolute;
+  top: 65px;
+  left: 10px;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+  padding-right: 20px;
+
+  &.is-hide {
+    display: none;
+    animation: fade 0.3s ease-in-out;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+
+    // arrow
+    &::before {
+      display: inline-block;
+      content: "";
+      width: 30px;
+      height: 15px;
+      background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAzMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBpZD0iNWJkOGUxZTgiIGNsaXAtcGF0aD0idXJsKCNlOWM4ZWIxMSkiPgogICAgPHJlY3QgaWQ9IjBiODBiN2E5IiB4PSItMiIgeT0iMTYuOTcwNyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IC0yIDE2Ljk3MDcpIiBmaWxsPSJ3aGl0ZSI+PC9yZWN0PgogIDwvZz4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iZTljOGViMTEiPgogICAgICA8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMTUiIGZpbGw9IndoaXRlIj48L3JlY3Q+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KPC9zdmc+")
+        no-repeat center;
+      background-size: cover;
+      z-index: 0;
+      position: absolute;
+      top: -15px;
+      left: 20px;
+    }
+
+    .popups__close {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  &__head {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+
+    &--mail2 {
+      width: 87px;
+      height: 80px;
+    }
+  }
+
+  &__title {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+
+    .lady-name {
+      color: $color-purple;
+    }
+  }
+
+  &__btn {
+    max-width: 100% !important;
+    @extend .popup-message__btn;
+  }
+
+  // block
+  &__block {
+    &.is-hide {
+      display: none;
+    }
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+/* ------------------- Form Letter -------------------- */
+.form-letter {
+  .popups-forms__title {
+    font-size: 26px;
+  }
+
+  &__body {
+    margin-bottom: 20px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    box-sizing: border-box;
+    color: #333;
+    display: block;
+    font: 16px/130% Roboto, sans-serif;
+    height: 50px;
+    padding: 0 20px;
+    width: 100%;
+    margin-bottom: 15px;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      background: #fff;
+      border: 1px solid $color-pink;
+    }
+  }
+
+  &__textarea {
+    height: 112px;
+    border-radius: 16px;
+    padding-top: 15px;
+    resize: none;
+  }
+}
+
+// letter-send
+.letter-send {
+  text-align: center;
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  &__info {
+    width: 100%;
+    color: rgba(#000, 0.6);
+    background: #fff8e2;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px;
+  }
+}
+
+// letter-success
+.letter-success {
+  .popups-forms__title {
+    font-size: 22px;
+  }
+}
+
+/* ------------------- Media -------------------- */
+@media (max-width: 600px) {
+  .popups-forms {
+    max-width: 100%;
+    position: fixed;
+    top: inherit;
+    bottom: 0;
+
+    &__wrap {
+      box-shadow: 0px -20px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 15px 15px 0 0;
+      padding-bottom: 40px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .popups-forms__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .popups-forms__icon--mail2 {
+    width: 68px;
+    height: 56px;
+  }
+  .popups-forms__title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .popups-forms__wrap {
+    padding: 40px 20px 40px 20px;
+  }
+
+  .popups-forms__title {
+    font-size: 20px;
+  }
+
+  .letter-success .popups-forms__title {
+    font-size: 18px;
+  }
+}
