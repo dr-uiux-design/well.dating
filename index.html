@@ -72,6 +72,24 @@
 												<h3 class="popups-forms__title">Write a letter to a lady <span class="lady-name">Anzhela</span>, Kyiv</h3>
 											</div>
 											<div class="form-letter__body">
+												<!-- selects gender & looking -->
+												<!-- select-gender -->
+												<div class="custom-select select-gender">
+													<input type="text" name="gender" class="custom-select__input" placeholder="Select your gender" readonly>
+													<div class="custom-select__options">
+														<div class="custom-select__option" data-value="gender-man">I am a Man</div>
+														<div class="custom-select__option" data-value="gender-woman">I am a Woman</div>
+													</div>
+												</div>
+												<!-- select-looking -->
+												<div class="custom-select select-looking">
+													<input type="text" name="looking" class="custom-select__input" placeholder="Who are you looking for?" readonly>
+													<div class="custom-select__options">
+														<div class="custom-select__option" data-value="looking-woman">looking for a Woman</div>
+														<div class="custom-select__option" data-value="looking-men">looking for a Man</div>
+													</div>
+												</div>
+												<!-- / .selects gender & looking -->
 												<input type="text" name="name" class="form-letter__input" placeholder="Enter your name" required>
 												<textarea name="letter-text" class="form-letter__textarea" placeholder="Your letter text" required></textarea>
 												<button class="popups-forms__btn" type="submit"><span>Send a letter</span></button>
